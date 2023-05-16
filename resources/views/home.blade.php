@@ -10,7 +10,7 @@
 
         <div class="my-card">
             <img src="{{$item->thumb}}" alt="">
-            <span><a href="{{route('show', $item->id)}}">{{$item->series}}</a></span>
+            <span><a href="{{route('comic.show', $item->id)}}">{{$item->series}}</a></span>
         </div>
             
         @endforeach
