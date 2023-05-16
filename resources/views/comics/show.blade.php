@@ -48,7 +48,7 @@
                         {{-- @foreach ($comics[0]['artists'] as $item)
                             {{$item}}
                         @endforeach --}}
-
+                        {{$comic->artists}}
 
                     </p>
                 </div>
@@ -64,6 +64,8 @@
                         {{-- @foreach ($comics[0]['writers'] as $item)
                             {{$item}}
                         @endforeach --}}
+                        {{$comic->writers}}
+
                     </p>
                 </div>
             </div>

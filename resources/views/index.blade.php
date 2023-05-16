@@ -18,7 +18,7 @@
     </div>
     <div class="my-button">
 
-        <button>Load More</button>
+        <a href="{{route('comic.create')}}"><button>Load More</button></a>
 
     </div>
 
