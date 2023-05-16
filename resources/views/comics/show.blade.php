@@ -6,7 +6,7 @@
 
     <div class="container image">
 
-        <img src="{{$comics[0]['thumb']}}" alt="">
+        <img src="{{$comic->thumb}}" alt="">
 
     </div>
 </section>
@@ -15,11 +15,11 @@
 
     <div class="left">
 
-        <h2>{{$comics[0]['title']}}</h2>
+        <h2>{{$comic->title}}</h2>
     
         <div class="price">
             <div class="price-area">
-                <span>U.S. Price: {{$comics[0]['price']}}</span>
+                <span>U.S. Price: {{$comic->price}}</span>
             </div>
     
             <div class="check"><span>Check Availability</span></div>
@@ -45,9 +45,11 @@
 
                 <div class="info">
                     <p>
-                        @foreach ($comics[0]['artists'] as $item)
+                        {{-- @foreach ($comics[0]['artists'] as $item)
                             {{$item}}
-                        @endforeach
+                        @endforeach --}}
+
+
                     </p>
                 </div>
             </div>
@@ -59,9 +61,9 @@
 
                 <div class="info">
                     <p>
-                        @foreach ($comics[0]['writers'] as $item)
+                        {{-- @foreach ($comics[0]['writers'] as $item)
                             {{$item}}
-                        @endforeach
+                        @endforeach --}}
                     </p>
                 </div>
             </div>
@@ -74,19 +76,19 @@
                     <div class="title">
                         Series:
                     </div>
-                    <h6>{{$comics[0]['series']}}</h6>
+                    <h6>{{$comic->series}}</h6>
                 </div>
                 <div class="price">
                     <div class="title">
                         U.S. Price:
                     </div>
-                    <span>{{$comics[0]['price']}}</span>
+                    <span>{{$comic->price}}</span>
                 </div>
                 <div class="date">
                     <div class="title">
                        On Sale Date:
                     </div>
-                    <span>{{$comics[0]['sale_date']}}</span>
+                    <span>{{$comic->sale_date}}</span>
                 </div>
 
 

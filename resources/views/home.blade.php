@@ -6,10 +6,11 @@
     <div class="container my-card-container">
 
         @foreach ($comics as $item)
+        
 
         <div class="my-card">
-            <img src="{{$item['thumb']}}" alt="">
-            <span><a href="">{{$item['series']}}</a></span>
+            <img src="{{$item->thumb}}" alt="">
+            <span><a href="{{route('show', $item->id)}}">{{$item->series}}</a></span>
         </div>
             
         @endforeach
