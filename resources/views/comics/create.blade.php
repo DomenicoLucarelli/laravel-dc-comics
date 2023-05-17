@@ -6,16 +6,33 @@
         <form class="d-flex flex-column align-items-center gap-2" action="{{route('comic.store')}}" method="POST">
 
             @csrf
+            <label for="title">Inserisci il titolo</label>
+            <input type="text" id="title" name="title" placeholder="Inserisci il titolo">
 
-            <input type="text" name="title" placeholder="inserisci il titolo">
-            <input type="text" name="description" placeholder="inserisci descrizione">
-            <input type="text" name="thumb" placeholder="inserisci src immagine">
-            <input type="text" name="price" placeholder="inserisci prezzo">
-            <input type="text" name="series" placeholder="inserisci serie">
-            <input type="text" name="sale_date" placeholder="inserisci data">
-            <input type="text" name="type" placeholder="inserisci tipo">
-            <input type="text" name="artists" placeholder="inserisci artisti">
-            <input type="text" name="writers" placeholder="inserisci scrittori">
+            <label for="description">Inserisci descrizione</label>
+            <input type="text" id="description" name="description" placeholder="Inserisci descrizione">
+
+            <label for="thumb">Inserisci src immagine</label>
+            <input type="text" id="thumb" name="thumb" placeholder="Inserisci src immagine">
+
+            <label for="price">Inserisci prezzo</label>
+            <input type="text" id="price" name="price" placeholder="Inserisci prezzo">
+
+            <label for="series">Inserisci serie</label>
+            <input type="text" id="series" name="series" placeholder="Inserisci serie">
+
+            <label for="sale_date">Inserisci data</label>
+            <input type="text" id="sale_date" name="sale_date" placeholder="Inserisci data">
+
+            <label for="type">Inserisci tipo</label>
+            <input type="text" id="type" name="type" placeholder="Inserisci tipo">
+
+            <label for="artists">Inserisci artisti</label>           
+            <input type="text" id="artists" name="artists" placeholder="Inserisci artisti">
+
+            <label for="writers">Inserisci scrittori</label>
+            <input type="text" id="writers" name="writers" placeholder="Inserisci scrittori">
+            
 
             <button type="submit">Crea</button>
         </form>
