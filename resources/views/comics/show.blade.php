@@ -93,7 +93,7 @@
                     <span>{{$comic->sale_date}}</span>
                 </div>
 
-
+                <a href="{{route('comic.edit', $comic->id)}}"><button>Modifica</button></a>
             </div>
         </div>
     </div>

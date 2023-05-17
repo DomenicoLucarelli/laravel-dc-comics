@@ -375,9 +375,107 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        $links =[
+            'CHARACTERS',
+            'COMICS',
+            'MOVIES',
+            'TV',
+            'GAMES',
+            'COLLECTIBLES',
+            'VIDEOS',
+            'FANS',
+            'NEWS',
+            'SHOP'
+        ];
+    
+        $buyImages = [
+           [
+              'title'=> 'DIGITAL COMICS',
+                'img'=> 'resources/img/buy-comics-digital-comics.png',
+            ],
+    
+           [
+              'title'=> 'DC MERCHANDISE',
+                'img'=> 'resources/img/buy-comics-merchandise.png',
+            ],
+    
+           [
+              'title'=> 'SUBSCRIPTION',
+                'img'=> 'resources/img/buy-comics-shop-locator.png',
+            ],
+    
+           [
+              'title'=> 'COMIC SHOP LOCATOR',
+                'img'=> 'resources/img/buy-comics-subscriptions.png',
+            ],
+    
+           [
+              'title'=> 'DC POWER VISA',
+                'img'=> 'resources/imgbuy-dc-power-visa.svg',
+            ]
+        ];
+    
+        $footerList = [
+            [
+               'name' => 'DC COMICS',
+               'links' => [
+                    'Characters',
+                    'Comics',
+                    'Movie',
+                    'TV',
+                    'Games',
+                    'Video',
+                    'News',
+                ],
+            ],
+    
+            [
+               'name' => 'DC ',
+               'links' => [
+    
+                    'Terms of use',
+                    'Privacy policy',
+                    'Ad choices',
+                    'Advertising',
+                    'jobs',
+                    'Subscriptions',
+                    'Talent workshops',
+                    'CPSC Certificates',
+                    'Ratings',
+                    'Shop help',
+                    'Contact Us',
+    
+                ],
+            ],
+    
+            [
+               'name' => 'SITES',
+               'links' => [
+                    'DC',
+                    'MAD Magazine',
+                    'DC kids',
+                    'DC Universe',
+                    'DC Power Visa',
+    
+                ],
+            ],
+    
+    
+            [
+               'name' => 'SHOP',
+               'links' => [
+                    'Shop DC',
+                    'Shop DC Collectibles',
+    
+                ],
+            ],
+    
+    
+    
+        ];
+        return view('comics/edit' ,compact('comic','footerList','buyImages','links'));
     }
 
     /**
@@ -387,9 +485,15 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $formData = $request->all();
+
+        $comic->update($formData);
+
+        $comic->save();
+
+        return redirect()->route('comic.show', $comic->id);
     }
 
     /**
