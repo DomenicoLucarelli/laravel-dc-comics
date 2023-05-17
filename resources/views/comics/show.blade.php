@@ -73,7 +73,7 @@
         <div class="specs">
             <h3>Specs</h3>
 
-            <div class="information">
+            <div class="information mb-3">
                 <div class="name">
                     <div class="title">
                         Series:
@@ -92,8 +92,36 @@
                     </div>
                     <span>{{$comic->sale_date}}</span>
                 </div>
+            </div>
 
-                <a href="{{route('comic.edit', $comic->id)}}"><button>Modifica</button></a>
+            <a href="{{route('comic.edit', $comic->id)}}"><button class="btn btn-primary">Modifica</button></a>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Elimina
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    Sei sicuro di voler eliminare questo Comic?
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                    <form action="{{route('comic.destroy', $comic->id)}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Elimina Definitivamente</button>
+                    </form>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
     </div>
